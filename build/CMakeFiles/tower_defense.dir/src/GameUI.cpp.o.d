@@ -1,6 +1,7 @@
-CMakeFiles/tower_defense.dir/src/Game.cpp.o: \
- /home/daddynho/towerDefense_cpp/src/Game.cpp /usr/include/stdc-predef.h \
- /home/daddynho/towerDefense_cpp/include/Game.h \
+CMakeFiles/tower_defense.dir/src/GameUI.cpp.o: \
+ /home/daddynho/towerDefense_cpp/src/GameUI.cpp \
+ /usr/include/stdc-predef.h \
+ /home/daddynho/towerDefense_cpp/include/GameUI.h \
  /usr/include/SFML/Graphics.hpp /usr/include/SFML/Window.hpp \
  /usr/include/SFML/System.hpp /usr/include/SFML/Config.hpp \
  /usr/include/SFML/System/Clock.hpp /usr/include/SFML/System/Export.hpp \
@@ -241,7 +242,9 @@ CMakeFiles/tower_defense.dir/src/Game.cpp.o: \
  /usr/include/SFML/Graphics/Glsl.hpp /usr/include/SFML/Graphics/Glsl.inl \
  /usr/include/SFML/Graphics/Sprite.hpp \
  /usr/include/SFML/Graphics/Text.hpp \
- /usr/include/SFML/Graphics/VertexBuffer.hpp /usr/include/c++/13/memory \
+ /usr/include/SFML/Graphics/VertexBuffer.hpp \
+ /home/daddynho/towerDefense_cpp/include/Game.h \
+ /usr/include/c++/13/memory \
  /usr/include/c++/13/bits/stl_raw_storage_iter.h \
  /usr/include/c++/13/bits/align.h /usr/include/c++/13/bits/unique_ptr.h \
  /usr/include/c++/13/bits/shared_ptr.h \
@@ -309,15 +312,4 @@ CMakeFiles/tower_defense.dir/src/Game.cpp.o: \
  /usr/include/c++/13/bits/stl_numeric.h \
  /usr/include/c++/13/pstl/glue_numeric_defs.h \
  /home/daddynho/towerDefense_cpp/include/Tower.h \
- /home/daddynho/towerDefense_cpp/include/Projectile.h \
- /home/daddynho/towerDefense_cpp/include/GameUI.h \
- /home/daddynho/towerDefense_cpp/include/TowerTypes.h \
- /usr/include/c++/13/filesystem /usr/include/c++/13/bits/fs_fwd.h \
- /usr/include/c++/13/bits/chrono.h /usr/include/c++/13/ratio \
- /usr/include/c++/13/bits/parse_numbers.h \
- /usr/include/c++/13/bits/fs_path.h /usr/include/c++/13/iomanip \
- /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/sstream \
- /usr/include/c++/13/istream /usr/include/c++/13/bits/istream.tcc \
- /usr/include/c++/13/bits/sstream.tcc /usr/include/c++/13/codecvt \
- /usr/include/c++/13/bits/fs_dir.h /usr/include/c++/13/bits/fs_ops.h \
- /usr/include/c++/13/iostream
+ /home/daddynho/towerDefense_cpp/include/Projectile.h

@@ -125,10 +125,24 @@ CMakeFiles/tower_defense.dir/src/Tower.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tower_defense.dir/src/Tower.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daddynho/towerDefense_cpp/src/Tower.cpp -o CMakeFiles/tower_defense.dir/src/Tower.cpp.s
 
+CMakeFiles/tower_defense.dir/src/TowerTypes.cpp.o: CMakeFiles/tower_defense.dir/flags.make
+CMakeFiles/tower_defense.dir/src/TowerTypes.cpp.o: /home/daddynho/towerDefense_cpp/src/TowerTypes.cpp
+CMakeFiles/tower_defense.dir/src/TowerTypes.cpp.o: CMakeFiles/tower_defense.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daddynho/towerDefense_cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/tower_defense.dir/src/TowerTypes.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tower_defense.dir/src/TowerTypes.cpp.o -MF CMakeFiles/tower_defense.dir/src/TowerTypes.cpp.o.d -o CMakeFiles/tower_defense.dir/src/TowerTypes.cpp.o -c /home/daddynho/towerDefense_cpp/src/TowerTypes.cpp
+
+CMakeFiles/tower_defense.dir/src/TowerTypes.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tower_defense.dir/src/TowerTypes.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daddynho/towerDefense_cpp/src/TowerTypes.cpp > CMakeFiles/tower_defense.dir/src/TowerTypes.cpp.i
+
+CMakeFiles/tower_defense.dir/src/TowerTypes.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tower_defense.dir/src/TowerTypes.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daddynho/towerDefense_cpp/src/TowerTypes.cpp -o CMakeFiles/tower_defense.dir/src/TowerTypes.cpp.s
+
 CMakeFiles/tower_defense.dir/src/Enemy.cpp.o: CMakeFiles/tower_defense.dir/flags.make
 CMakeFiles/tower_defense.dir/src/Enemy.cpp.o: /home/daddynho/towerDefense_cpp/src/Enemy.cpp
 CMakeFiles/tower_defense.dir/src/Enemy.cpp.o: CMakeFiles/tower_defense.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daddynho/towerDefense_cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/tower_defense.dir/src/Enemy.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daddynho/towerDefense_cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/tower_defense.dir/src/Enemy.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tower_defense.dir/src/Enemy.cpp.o -MF CMakeFiles/tower_defense.dir/src/Enemy.cpp.o.d -o CMakeFiles/tower_defense.dir/src/Enemy.cpp.o -c /home/daddynho/towerDefense_cpp/src/Enemy.cpp
 
 CMakeFiles/tower_defense.dir/src/Enemy.cpp.i: cmake_force
@@ -142,7 +156,7 @@ CMakeFiles/tower_defense.dir/src/Enemy.cpp.s: cmake_force
 CMakeFiles/tower_defense.dir/src/Projectile.cpp.o: CMakeFiles/tower_defense.dir/flags.make
 CMakeFiles/tower_defense.dir/src/Projectile.cpp.o: /home/daddynho/towerDefense_cpp/src/Projectile.cpp
 CMakeFiles/tower_defense.dir/src/Projectile.cpp.o: CMakeFiles/tower_defense.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daddynho/towerDefense_cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/tower_defense.dir/src/Projectile.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daddynho/towerDefense_cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/tower_defense.dir/src/Projectile.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tower_defense.dir/src/Projectile.cpp.o -MF CMakeFiles/tower_defense.dir/src/Projectile.cpp.o.d -o CMakeFiles/tower_defense.dir/src/Projectile.cpp.o -c /home/daddynho/towerDefense_cpp/src/Projectile.cpp
 
 CMakeFiles/tower_defense.dir/src/Projectile.cpp.i: cmake_force
@@ -153,14 +167,30 @@ CMakeFiles/tower_defense.dir/src/Projectile.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tower_defense.dir/src/Projectile.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daddynho/towerDefense_cpp/src/Projectile.cpp -o CMakeFiles/tower_defense.dir/src/Projectile.cpp.s
 
+CMakeFiles/tower_defense.dir/src/GameUI.cpp.o: CMakeFiles/tower_defense.dir/flags.make
+CMakeFiles/tower_defense.dir/src/GameUI.cpp.o: /home/daddynho/towerDefense_cpp/src/GameUI.cpp
+CMakeFiles/tower_defense.dir/src/GameUI.cpp.o: CMakeFiles/tower_defense.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/daddynho/towerDefense_cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/tower_defense.dir/src/GameUI.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tower_defense.dir/src/GameUI.cpp.o -MF CMakeFiles/tower_defense.dir/src/GameUI.cpp.o.d -o CMakeFiles/tower_defense.dir/src/GameUI.cpp.o -c /home/daddynho/towerDefense_cpp/src/GameUI.cpp
+
+CMakeFiles/tower_defense.dir/src/GameUI.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tower_defense.dir/src/GameUI.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daddynho/towerDefense_cpp/src/GameUI.cpp > CMakeFiles/tower_defense.dir/src/GameUI.cpp.i
+
+CMakeFiles/tower_defense.dir/src/GameUI.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tower_defense.dir/src/GameUI.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daddynho/towerDefense_cpp/src/GameUI.cpp -o CMakeFiles/tower_defense.dir/src/GameUI.cpp.s
+
 # Object files for target tower_defense
 tower_defense_OBJECTS = \
 "CMakeFiles/tower_defense.dir/src/main.cpp.o" \
 "CMakeFiles/tower_defense.dir/src/Game.cpp.o" \
 "CMakeFiles/tower_defense.dir/src/Map.cpp.o" \
 "CMakeFiles/tower_defense.dir/src/Tower.cpp.o" \
+"CMakeFiles/tower_defense.dir/src/TowerTypes.cpp.o" \
 "CMakeFiles/tower_defense.dir/src/Enemy.cpp.o" \
-"CMakeFiles/tower_defense.dir/src/Projectile.cpp.o"
+"CMakeFiles/tower_defense.dir/src/Projectile.cpp.o" \
+"CMakeFiles/tower_defense.dir/src/GameUI.cpp.o"
 
 # External object files for target tower_defense
 tower_defense_EXTERNAL_OBJECTS =
@@ -169,14 +199,16 @@ tower_defense: CMakeFiles/tower_defense.dir/src/main.cpp.o
 tower_defense: CMakeFiles/tower_defense.dir/src/Game.cpp.o
 tower_defense: CMakeFiles/tower_defense.dir/src/Map.cpp.o
 tower_defense: CMakeFiles/tower_defense.dir/src/Tower.cpp.o
+tower_defense: CMakeFiles/tower_defense.dir/src/TowerTypes.cpp.o
 tower_defense: CMakeFiles/tower_defense.dir/src/Enemy.cpp.o
 tower_defense: CMakeFiles/tower_defense.dir/src/Projectile.cpp.o
+tower_defense: CMakeFiles/tower_defense.dir/src/GameUI.cpp.o
 tower_defense: CMakeFiles/tower_defense.dir/build.make
 tower_defense: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.6.1
 tower_defense: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.6.1
 tower_defense: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.6.1
 tower_defense: CMakeFiles/tower_defense.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/daddynho/towerDefense_cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable tower_defense"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/daddynho/towerDefense_cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable tower_defense"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tower_defense.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

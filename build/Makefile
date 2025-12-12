@@ -177,6 +177,30 @@ src/Game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tower_defense.dir/build.make CMakeFiles/tower_defense.dir/src/Game.cpp.s
 .PHONY : src/Game.cpp.s
 
+src/GameUI.o: src/GameUI.cpp.o
+.PHONY : src/GameUI.o
+
+# target to build an object file
+src/GameUI.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tower_defense.dir/build.make CMakeFiles/tower_defense.dir/src/GameUI.cpp.o
+.PHONY : src/GameUI.cpp.o
+
+src/GameUI.i: src/GameUI.cpp.i
+.PHONY : src/GameUI.i
+
+# target to preprocess a source file
+src/GameUI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tower_defense.dir/build.make CMakeFiles/tower_defense.dir/src/GameUI.cpp.i
+.PHONY : src/GameUI.cpp.i
+
+src/GameUI.s: src/GameUI.cpp.s
+.PHONY : src/GameUI.s
+
+# target to generate assembly for a file
+src/GameUI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tower_defense.dir/build.make CMakeFiles/tower_defense.dir/src/GameUI.cpp.s
+.PHONY : src/GameUI.cpp.s
+
 src/Map.o: src/Map.cpp.o
 .PHONY : src/Map.o
 
@@ -249,6 +273,30 @@ src/Tower.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tower_defense.dir/build.make CMakeFiles/tower_defense.dir/src/Tower.cpp.s
 .PHONY : src/Tower.cpp.s
 
+src/TowerTypes.o: src/TowerTypes.cpp.o
+.PHONY : src/TowerTypes.o
+
+# target to build an object file
+src/TowerTypes.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tower_defense.dir/build.make CMakeFiles/tower_defense.dir/src/TowerTypes.cpp.o
+.PHONY : src/TowerTypes.cpp.o
+
+src/TowerTypes.i: src/TowerTypes.cpp.i
+.PHONY : src/TowerTypes.i
+
+# target to preprocess a source file
+src/TowerTypes.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tower_defense.dir/build.make CMakeFiles/tower_defense.dir/src/TowerTypes.cpp.i
+.PHONY : src/TowerTypes.cpp.i
+
+src/TowerTypes.s: src/TowerTypes.cpp.s
+.PHONY : src/TowerTypes.s
+
+# target to generate assembly for a file
+src/TowerTypes.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tower_defense.dir/build.make CMakeFiles/tower_defense.dir/src/TowerTypes.cpp.s
+.PHONY : src/TowerTypes.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -288,6 +336,9 @@ help:
 	@echo "... src/Game.o"
 	@echo "... src/Game.i"
 	@echo "... src/Game.s"
+	@echo "... src/GameUI.o"
+	@echo "... src/GameUI.i"
+	@echo "... src/GameUI.s"
 	@echo "... src/Map.o"
 	@echo "... src/Map.i"
 	@echo "... src/Map.s"
@@ -297,6 +348,9 @@ help:
 	@echo "... src/Tower.o"
 	@echo "... src/Tower.i"
 	@echo "... src/Tower.s"
+	@echo "... src/TowerTypes.o"
+	@echo "... src/TowerTypes.i"
+	@echo "... src/TowerTypes.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
