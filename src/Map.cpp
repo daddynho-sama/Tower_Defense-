@@ -1,4 +1,5 @@
 #include "Map.h"
+#include <filesystem>
 #include <fstream>
 #include <sstream>
 
@@ -20,6 +21,8 @@ bool Map::loadFromFile(const std::string& filename) {
         rows++;
     }
     file.close();
+    // attempt to load tile textures as well
+    loadTileTextures();
     return true;
 }
 
@@ -61,33 +64,76 @@ int Map::getTile(int tx, int ty) const {
 
 void Map::draw(sf::RenderWindow& window) {
     sf::RectangleShape rect({tileSize, tileSize});
+    sf::Sprite sprite;
     for (int y=0;y<rows;y++) {
         for (int x=0;x<cols;x++) {
             int v = tiles[y*cols + x];
             rect.setPosition(x*tileSize, y*tileSize);
             switch (v) {
-                case 0: // herbe (vert)
-                    rect.setFillColor(sf::Color(50,180,50));
+                case 0: // herbe (vert) -> grass2 texture
+                    if (texturesLoaded && grassTexture.getSize().x > 0) {
+                        sprite.setTexture(grassTexture);
+                        sprite.setScale(tileSize / grassTexture.getSize().x, tileSize / grassTexture.getSize().y);
+                        sprite.setOrigin(0,0);
+                        sprite.setPosition(x*tileSize, y*tileSize);
+                        window.draw(sprite);
+                    } else {
+                        rect.setFillColor(sf::Color(50,180,50));
+                        window.draw(rect);
+                    }
                     break;
-                case 1: // chemin (gris)
-                    rect.setFillColor(sf::Color(180,180,180));
+                case 1: // chemin (gris) -> paving1 texture
+                    if (texturesLoaded && pavingTexture.getSize().x > 0) {
+                        sprite.setTexture(pavingTexture);
+                        sprite.setScale(tileSize / pavingTexture.getSize().x, tileSize / pavingTexture.getSize().y);
+                        sprite.setOrigin(0,0);
+                        sprite.setPosition(x*tileSize, y*tileSize);
+                        window.draw(sprite);
+                    } else {
+                        rect.setFillColor(sf::Color(180,180,180));
+                        window.draw(rect);
+                    }
                     break;
-                case 2: // obstacles (marron)
-                    rect.setFillColor(sf::Color(150,120,80));
+                case 2: // obstacles (marron) -> stone wall texture
+                    if (texturesLoaded && stoneTexture.getSize().x > 0) {
+                        sprite.setTexture(stoneTexture);
+                        sprite.setScale(tileSize / stoneTexture.getSize().x, tileSize / stoneTexture.getSize().y);
+                        sprite.setOrigin(0,0);
+                        sprite.setPosition(x*tileSize, y*tileSize);
+                        window.draw(sprite);
+                    } else {
+                        rect.setFillColor(sf::Color(150,120,80));
+                        window.draw(rect);
+                    }
                     break;
                 case 3: // base finale (bleu)
                     rect.setFillColor(sf::Color(70,130,180));
+                    window.draw(rect);
                     break;
                 case 4: // spawn (rouge)
                     rect.setFillColor(sf::Color(200,50,50));
+                    window.draw(rect);
                     break;
                 default:
                     rect.setFillColor(sf::Color::Magenta);
+                    window.draw(rect);
                     break;
             }
-            window.draw(rect);
         }
     }
+}
+
+void Map::loadTileTextures() {
+    texturesLoaded = false;
+    bool ok1 = false, ok2 = false, ok3 = false;
+    namespace fs = std::filesystem;
+    if (fs::exists("assets/tiles/grass2.png")) ok1 = grassTexture.loadFromFile("assets/tiles/grass2.png");
+    else if (fs::exists("../assets/tiles/grass2.png")) ok1 = grassTexture.loadFromFile("../assets/tiles/grass2.png");
+    if (fs::exists("assets/tiles/paving 1.png")) ok2 = pavingTexture.loadFromFile("assets/tiles/paving 1.png");
+    else if (fs::exists("../assets/tiles/paving 1.png")) ok2 = pavingTexture.loadFromFile("../assets/tiles/paving 1.png");
+    if (fs::exists("assets/tiles/stone wall 10.png")) ok3 = stoneTexture.loadFromFile("assets/tiles/stone wall 10.png");
+    else if (fs::exists("../assets/tiles/stone wall 10.png")) ok3 = stoneTexture.loadFromFile("../assets/tiles/stone wall 10.png");
+    if (ok1 || ok2 || ok3) texturesLoaded = true;
 }
 
 std::pair<int,int> Map::findBase() const {

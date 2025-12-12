@@ -15,16 +15,20 @@ set(SOURCES
     src/Game.cpp
     src/Map.cpp
     src/Tower.cpp
+    src/TowerTypes.cpp
     src/Enemy.cpp
     src/Projectile.cpp
+    src/GameUI.cpp
 )
 
 set(HEADERS
     include/Game.h
     include/Map.h
     include/Tower.h
+    include/TowerTypes.h
     include/Enemy.h
     include/Projectile.h
+    include/GameUI.h
     include/ElementGraphique.h
 )
 add_executable(tower_defense ${SOURCES} ${HEADERS})

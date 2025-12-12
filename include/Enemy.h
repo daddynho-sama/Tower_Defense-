@@ -18,16 +18,20 @@ class Enemy : public ElementGraphique {
     // pointers to world
     Game* game = nullptr;
     int tx = 0, ty = 0; // current tile coords
+    int prevTx = -1, prevTy = -1;
     sf::Vector2f targetPos; // target center when moving
     std::mt19937 rng;
 
+    int type = 1; // enemy type (1 or 2)
+    sf::Sprite sprite;
     // HP and status
     float hp = 50.f;
     bool alive = true;
     float radius = 12.f;
 
 public:
-    Enemy(const sf::Vector2f& start, Game* gamePtr = nullptr);
+    // allow setting hp at construction
+    Enemy(const sf::Vector2f& start, Game* gamePtr = nullptr, float initialHP = 50.f, int type = 1);
 
     void setPath(const std::vector<sf::Vector2f>& p);
     void update(float dt) override;

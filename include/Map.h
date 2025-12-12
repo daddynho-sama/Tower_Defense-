@@ -10,10 +10,17 @@ private:
     int cols, rows;
     float tileSize;
     std::vector<int> tiles;
+    // tile textures
+    sf::Texture grassTexture;
+    sf::Texture pavingTexture;
+    sf::Texture stoneTexture;
+    bool texturesLoaded = false;
 public:
     Map(float tileSize = 32.f);
     Map(int cols, int rows, float tileSize);
     bool loadFromFile(const std::string& filename);
+    // loads tile textures from assets
+    void loadTileTextures();
     bool saveToFile(const std::string& filename) ;
     void setTile(int tx, int ty, int value);
     int getTile(int tx, int ty) const;

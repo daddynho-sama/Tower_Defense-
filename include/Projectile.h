@@ -14,8 +14,8 @@ public:
     float damage;
     bool dead = false;
     Game* game = nullptr;
-
-    Projectile(sf::Vector2f p, sf::Vector2f d, float s, float dmg, Game* g = nullptr);
+    int projType = 0; // 0=default, 1=fire arrow, 2=big sniper ball
+    Projectile(sf::Vector2f p, sf::Vector2f d, float s, float dmg, Game* g = nullptr, int type = 0);
 
     void update(float dt) override;
     void render(sf::RenderWindow& w) override;

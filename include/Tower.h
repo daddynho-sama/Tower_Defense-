@@ -10,7 +10,7 @@ class Enemy; // forward
 class Game;  // forward
 
 class Tower : public ElementGraphique {
-private:
+protected:
     sf::Vector2f pos;
     sf::CircleShape baseShape;
     Game* gamePtr = nullptr;  // store Game pointer for update() override
@@ -31,14 +31,14 @@ public:
     Tower(const sf::Vector2f& position, int c = 60, Game* game = nullptr);
     void update(float dt) override;  // calls update(dt, *gamePtr) if gamePtr available
     void update(float dt, Game& game);  // actual implementation
-    void render(sf::RenderWindow& window) override;
+    virtual void render(sf::RenderWindow& window) override;
     sf::Vector2f getPosition() const override;
     
     // Tower methods
     std::shared_ptr<Enemy> findTarget(const Game& game) const;
     bool isValidTarget(const std::shared_ptr<Enemy>& e, const Game& game) const;
     bool updateAngle(float dt, const Game& game);
-    void shoot(Game& game);
+    virtual void shoot(Game& game);  // Made virtual for subclass override
     void upgrade();
     
     // Getters

@@ -4,7 +4,7 @@
 #include <algorithm>
 #include <random>
 
-Enemy::Enemy(const sf::Vector2f& start, Game* gamePtr) : game(gamePtr) {
+Enemy::Enemy(const sf::Vector2f& start, Game* gamePtr, float initialHP, int t) : game(gamePtr), hp(initialHP), type(t) {
     // size the enemy visually relative to tileSize when game/map is available
     if (game) {
         const Map& m = game->getMap();
@@ -13,6 +13,24 @@ Enemy::Enemy(const sf::Vector2f& start, Game* gamePtr) : game(gamePtr) {
         shape.setSize({size, size});
         shape.setOrigin(size/2.f, size/2.f);
         shape.setPosition(start);
+        // if textures are available, set sprite accordingly
+        if (game->texturesLoaded) {
+            if (type == 1 && game->enemy1Texture.getSize().x > 0) {
+                sprite.setTexture(game->enemy1Texture);
+            } else if (type == 2 && game->enemy2Texture.getSize().x > 0) {
+                sprite.setTexture(game->enemy2Texture);
+            }
+            if (sprite.getTexture()) {
+                sf::Vector2u tsize = sprite.getTexture()->getSize();
+                if (tsize.x > 0 && tsize.y > 0) {
+                    float scaleX = (size * 2.f) / float(tsize.x);
+                    float scaleY = (size * 2.f) / float(tsize.y);
+                    sprite.setScale(scaleX, scaleY);
+                    sprite.setOrigin(tsize.x/2.f, tsize.y/2.f);
+                    sprite.setPosition(start);
+                }
+            }
+        }
     } else {
         shape.setSize({20.f, 20.f});
         shape.setOrigin(10.f, 10.f);
@@ -33,6 +51,8 @@ Enemy::Enemy(const sf::Vector2f& start, Game* gamePtr) : game(gamePtr) {
         ty = static_cast<int>(shape.getPosition().y / ts);
         snapToTileCenter();
         targetPos = shape.getPosition();
+        // update logical radius
+        radius = shape.getSize().x * 0.45f;
     }
 }
 
@@ -43,10 +63,14 @@ void Enemy::setPath(const std::vector<sf::Vector2f>& p) {
 
 void Enemy::snapToTileCenter() {
     if (!game) return;
-    shape.setPosition(game->getMap().tileCenter(tx, ty));
+    sf::Vector2f newPos = game->getMap().tileCenter(tx, ty);
+    shape.setPosition(newPos);
+    if (sprite.getTexture()) sprite.setPosition(newPos);
 }
 
 void Enemy::update(float dt) {
+    if (!alive) return;
+    
     // If following an explicit path, prefer that
     if (!path.empty() && pathIndex < path.size()) {
         sf::Vector2f pos = shape.getPosition();
@@ -59,6 +83,7 @@ void Enemy::update(float dt) {
         }
         dir /= dist;
         shape.move(dir * speed * dt);
+        if (sprite.getTexture()) sprite.setPosition(shape.getPosition());
         return;
     }
 
@@ -72,6 +97,14 @@ void Enemy::update(float dt) {
             int curTy = static_cast<int>(shape.getPosition().y / ts);
             curTx = std::clamp(curTx, 0, m.getCols()-1);
             curTy = std::clamp(curTy, 0, m.getRows()-1);
+
+            // Debug info: print current tile and distance
+            // debug print removed
+            // Check if reached base
+            if (m.getTile(curTx, curTy) == 3) {
+                alive = false;
+                return;
+            }
 
             int bestX = curTx, bestY = curTy;
             int bestDist = distMap[curTy][curTx];
@@ -88,13 +121,17 @@ void Enemy::update(float dt) {
             sf::Vector2f target = m.tileCenter(bestX, bestY);
             sf::Vector2f dir = target - shape.getPosition();
             float dist = std::hypot(dir.x, dir.y);
-            if (dist > 1.f) {
-                dir /= dist;
-                shape.move(dir * speed * dt);
+                if (dist > 1.f) {
+                    dir /= dist;
+                    shape.move(dir * speed * dt);
+                    if (sprite.getTexture()) sprite.setPosition(shape.getPosition());
             } else {
                 // reached target tile center: snap and update tx/ty
                 tx = bestX; ty = bestY;
                 snapToTileCenter();
+                if (tx != prevTx || ty != prevTy) {
+                    prevTx = tx; prevTy = ty;
+                }
             }
             return;
         }
@@ -104,7 +141,11 @@ void Enemy::update(float dt) {
 }
 
 void Enemy::render(sf::RenderWindow& window) {
-    window.draw(shape);
+    if (sprite.getTexture()) {
+        window.draw(sprite);
+    } else {
+        window.draw(shape);
+    }
 }
 
 sf::Vector2f Enemy::getPosition() const {

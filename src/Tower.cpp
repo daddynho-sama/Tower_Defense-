@@ -97,7 +97,7 @@ void Tower::shoot(Game& game) {
     sf::Vector2f dir = normalize(t->getPosition() - pos);
 
     game.projectiles.push_back(
-        std::make_unique<Projectile>(pos, dir, 300.f, damage, &game)
+        std::make_unique<Projectile>(pos, dir, 300.f, damage, &game, 0)
     );
 
     cooldown = 1.f / fireRate;
